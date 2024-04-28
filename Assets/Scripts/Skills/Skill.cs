@@ -39,6 +39,7 @@ public class Skill : MonoBehaviour
 
     protected virtual Transform FindClosestEnemy(Transform _checkTransform)
     {
+       
         // 복제 인간 주변 25거리의 적을 모음
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_checkTransform.position, Mathf.Infinity);
 
@@ -53,7 +54,7 @@ public class Skill : MonoBehaviour
                 // 발견한 적군까지 거리를 계산
                 float distanceToEnemy = Vector2.Distance(_checkTransform.position, hit.transform.position);
 
-                // 적과 거리가 가까워지지 않으면
+                //  적군의 거리      < 무한대 
                 if (distanceToEnemy < closeDistance)
                 {
                     // 가장 가까운적 할당

@@ -98,7 +98,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void DoDamage(CharacterStats _targetStats)
     {
-
+        // 감전 상태
         if (TargetCanAvoidAttack(_targetStats))
             return;
 
@@ -359,7 +359,7 @@ public class CharacterStats : MonoBehaviour
         int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
 
         if (isShocked)  // 만약 내가 감전 상태면
-            totalEvasion += 20; // 적의 회피 능력 상승 20
+            totalEvasion += 99; // 적의 회피 능력 상승 20
 
         if (Random.Range(0, 100) < totalEvasion)
         {
